@@ -1,4 +1,5 @@
-﻿using Silphid.Extensions;
+﻿using System;
+using Silphid.Extensions;
 using Silphid.Showzup;
 using UniRx;
 
@@ -6,7 +7,7 @@ public class CatalogView : View<CatalogViewModel>
 {
     public SelectionControl SelectionControl;
 
-    public override ICompletable Load()
+    public override IObservable<Unit> Load()
     {
         SelectionControl
             .Present(ViewModel.Photos)
